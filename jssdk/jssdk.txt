@@ -1,0 +1,21 @@
+﻿1.首先要在https://mp.weixin.qq.com微信公众平台注册一个订阅号；
+2.需要有一个域名及支持php环境的空间；
+3.进入微信平台的“开发者工具”的“公众平台测试帐号”；
+4.查看jssdk的帮助中文文档，https://mp.weixin.qq.com/wiki；
+5.在帮助中心文档最下方下载sample.zip文件，并查看readme；
+6.在接收到我给大家发的index.php以后，上传到空间，然后有域名使用http://www.chinavane.online/index.php；
+7.接口配置信息修改以及JS接口安全域名修改，
+例如：URL-->http://www.chinavane.online/index.php
+Token-->weixin
+以及
+域名：www.chinavane.online
+8.扫描测试的二维码进行关注订阅；
+9.打开sample.zip中的php目录查看代码的查看学习；
+	1)access_token.php是一个json对象文件；
+	2)jsapi_ticket.php是一个json对象文件；
+	3)jssdk.php是一个生成签名的类文件，其实包含了文件读取函数、文件写入函数、http资源请求函数、Token生成函数、Ticket生成函数、随机字符串函数、生成签名函数等内容；
+10.打开sample.php文件，这个文件中调用了jssdk.php这个类库，生成了签名等信息内容，并且在wx.config里进行了调用配置，然后在ready中进行了api的调用，当然需要设置jsApiList的内容；
+11.将整个php目录上传到空间；
+12.生成网页地址的二维码，打开微信进行扫一扫，马上就可以进行硬件设备功能的调用；
+13.在sample.php的网页上加一个按钮，执行click点击操作，但是需要注意将函数写在ready外面去，这样子就可以通过点击按钮来触发微信调用硬件设备功能的操作。
+

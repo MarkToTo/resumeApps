@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  #footer div {
+    text-align: center;
+    flex: 1; }
+
+.top {
+  height: 30px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  color: gold; }
+
+.first {
+  margin: 10px 0; }
+
+.first_img {
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0; }
+
+.color_gold {
+  color: gold; }
+
+.color_green {
+  color: #4CE838; }
+
+.color_orange {
+  color: orange; }
+
+#me_icon {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #23B3FA;
+  margin: 10px auto; }
+
+#me_icon img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 5px auto; }
+
+.info {
+  display: flex; }
+
+.info dl {
+  flex: 1; }
+
+.info dl {
+  padding: 0 10px; }
+
+.info dl dd {
+  line-height: 30px; }
+
+.skill_item img {
+  margin: 10px 2px; }
+
+#scroller ul li {
+  height: auto; }
+
+#audio_btn {
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/music.png);
+  background-size: 100% 100%;
+  position: absolute;
+  border-radius: 50%;
+  top: 50px;
+  right: 10px;
+  z-index: 100; }
+
+.rotate {
+  -webkit-animation: rotating 1.2s linear infinite;
+  -moz-animation: rotating 1.2s linear infinite;
+  -o-animation: rotating 1.2s linear infinite;
+  animation: rotating 1.2s linear infinite; }
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes rotating {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
+@-moz-keyframes rotating {
+  from {
+    -moz-transform: rotate(0); }
+  to {
+    -moz-transform: rotate(360deg); } }
+
+.bbg02 {
+  background: url(.././images/bbg02.jpg) no-repeat;
+  background-size: 100% 100%; }
+
+.per1 {
+  width: 300px;
+  height: 320px;
+  background: url(.././images/me001.png) no-repeat;
+  background-size: 300px 320px; }
+
+.bg8 {
+  background: url(.././images/bg08.jpg) no-repeat;
+  background-size: 100% 100%; }
+
+.bg06 {
+  background: url(.././images/end.jpg) no-repeat;
+  background-size: 100% 100%; }
+
+.l_font {
+  font-size: 30px; }
+
+.m_font {
+  font-size: 26px; }
+
+.s_font {
+  font-size: 20px; }
+
+.ss_font {
+  font-size: 16px; }
+
+.sss_font {
+  font-size: 12px; }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+</head>
+<body>
+    <button onclick="scan()">扫描二维码</button>
+    <button onclick="photo()">选择图片</button>
+</body>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script>
+
+	$.ajax({
+    url:'http://me.hao669.online/me/php/getsign.php',
+    method:'POST',
+    data:{
+      url:window.location.href
+    },
+    dataType:'json'
+  }).done(function(data){
+    // console.log(data);
+
+    wx.config({
+      debug: true,
+      appId: data.appId,
+      timestamp: data.timestamp,
+      nonceStr: data.nonceStr,
+      signature: data.signature,
+      jsApiList: [
+        // 所有要调用的 API 都要加到这个列表中
+        'chooseImage','scanQRCode'
+      ]
+    });
+
+  })
+
+  function photo(){
+     wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+          var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+      }
+    });
+  }
+
+  function scan(){
+    wx.scanQRCode({
+    needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+    scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+    success: function (res) {
+    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+  }
+});
+  }
+  
+</script>
+</html>
