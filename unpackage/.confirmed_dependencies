@@ -1,0 +1,46 @@
+{
+	"index.html": {
+		"resources": [
+			"images/02.jpg",
+			"css/index.css",
+			"images/03.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"images/01.jpg",
+			"css/mui.min.css",
+			"images/college.jpg",
+			"images/dayi.jpg",
+			"images/hh.jpg",
+			"images/page.png",
+			"images/bg.png",
+			"images/sublime.png",
+			"images/node.jpg",
+			"images/jQuery.jpg",
+			"images/ps.jpg",
+			"images/bootstrap.jpg",
+			"images/js1.jpg",
+			"images/js.jpg",
+			"images/sql.jpg",
+			"images/angular.jpg",
+			"images/hybrid.jpg",
+			"images/hcj.jpg",
+			"images/es.png",
+			"images/wechat1.jpg",
+			"images/ex.jpg"
+		],
+		"refer": [
+			"detail.html",
+			"guide.html"
+		]
+	},
+	"detail.html": {
+		"resources": [
+			"images/02.jpg",
+			"images/03.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"images/01.jpg",
+			"css/mui.min.css"
+		]
+	}
+}

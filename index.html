@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>index</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	
+      	mui.plusReady(function(){
+      		//显示启动导航
+		/*mui.openWindow({
+			id:'guide',
+			url:'guide.html',
+			show:{
+				aniShow:'none'
+			},
+			waiting:{
+				autoShow:false
+			}
+		});*/
+      		//事件委派--第一页列表
+      		/*mui('.mui-table-view').on('tap','.mui-table-view-cell',function(){
+      			var detailId = this.getAttribute('id');
+//    			alert(detailId);
+				mui.openWindow({
+					id:'detail',
+					url:'detail.html',
+					extras:{
+						detailId:detailId
+					}
+				})
+      		});*/
+      		
+			// 拍照
+			function captureImage(){
+				var cmr = plus.camera.getCamera();
+				var res = cmr.supportedImageResolutions[0];
+				var fmt = cmr.supportedImageFormats[0];
+				console.log("Resolution: "+res+", Format: "+fmt);
+				cmr.captureImage( function( path ){
+						alert( "Capture image success: " + path );  
+					},
+					function( error ) {
+						alert( "Capture image failed: " + error.message );
+					},
+					{resolution:res,format:fmt}
+				);
+			}
+			
+			//打开相机
+			mui('.mui-bar-nav').on('tap','.mui-icon-camera',function(){
+				captureImage();
+			})
+			
+			//信息提示
+			document.getElementById("alertBtn1").addEventListener('tap', function() {
+				mui.alert('18382004047', 'Phone Number:');
+			});
+			document.getElementById("alertBtn2").addEventListener('tap', function() {
+				mui.alert('stone_hzz@163.com', 'Email:');
+			});
+      });
+      
+      
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+			<span class="mui-icon mui-icon-camera" ></span>
+			<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+			<h1 class="mui-title">MarkTo</h1>
+			<span class="mui-icon mui-icon-camera" style="float: right;"></span>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#tabbar">
+				<span class="mui-icon iconfont icon-gongju"></span>
+				<span class="mui-tab-label">技能</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon iconfont icon-jiaoyu"><!--<span class="mui-badge">9</span>--></span>
+				<span class="mui-tab-label">教育</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-contact">
+				<span class="mui-icon iconfont icon-xiangmu1"></span>
+				<span class="mui-tab-label">项目</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-map">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">我</span>
+			</a>
+		</nav>
+		<!--包含四个导航页-->
+		<div class="mui-content">
+			<!--第一个主页面-基本技能-->
+			<div id="tabbar" class="mui-control-content mui-active">
+				<!--1基本技能-->
+				<div class="title text-left padding-left-10 padding-col-10" style="color:#8B633F;margin-left: 5px;">基本技能</div>
+				<div class="mui-card">
+				<ul class="mui-table-view">
+    				<li class="mui-table-view-cell mui-media" id="skill_1">
+			            <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left border-radius-20" src="images/hcj.jpg">
+			            <div class="mui-media-body">
+			        HTML+CSS+JS
+					 		<p class='mui-ellipsis'><span class="pros"></span></p>
+					    </div>
+					 </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_2">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/jQuery.jpg">
+					            <div class="mui-media-body">
+					                jQuery
+					                <p class='mui-ellipsis'><span class="pros" style="width:70%;"></span></p>
+					            </div>
+					        </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_3">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/ps.jpg">
+					            <div class="mui-media-body">
+					                PS
+					                <p class='mui-ellipsis'><span class="pros" style="width:70%;"></span>  </p>
+					            </div>
+					        </a>
+					</li>
+					</ul>
+
+				</div>
+				<!--2规范-->
+				<div class="title text-left padding-left-10 padding-col-10" style="color:#C63F58;margin-left: 5px;">规范</div>
+				<div class="mui-card">
+				<ul class="mui-table-view">
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/js.jpg">
+					            <div class="mui-media-body">
+					                CommonJS
+					                <p class='mui-ellipsis'><span class="pros" style="width:60%;"></span>  </p>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/js1.jpg">
+					            <div class="mui-media-body">
+					                AMD/CMD
+					                <p class='mui-ellipsis'><span class="pros"style="width:60%;"></span>  </p>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/es.png">
+					            <div class="mui-media-body">
+					                ES5/ES6
+					                <p class='mui-ellipsis'><span class="pros"style="width:60%;"></span></p>
+					            </div>
+					        </a>
+					    </li>
+					</ul>
+				
+				</div>
+				<!--3框架-->
+				<div class="title text-left padding-left-10 padding-col-10" style="color:#502447;margin-left: 5px;">框架、类库</div>
+				<div class="mui-card">
+				<ul class="mui-table-view">
+    				<li class="mui-table-view-cell mui-media" id="skill_1">
+			            <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left border-radius-20" src="images/jQuery.jpg">
+			            <div class="mui-media-body">
+			        jQueryEasyUI/jQuery
+					 		<p class='mui-ellipsis'><span class="pros" style="width:65%;"></span></p>
+					    </div>
+					 </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_2">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/bootstrap.jpg">
+					            <div class="mui-media-body">
+					Bootstrap/MUI
+					                <p class='mui-ellipsis'><span class="pros" style="width:70%;"></span>  </p>
+					            </div>
+					        </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_3">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/angular.jpg">
+					            <div class="mui-media-body">
+					AngularJS/Swiper
+					                <p class='mui-ellipsis'><span class="pros" style="width:65%;"></span>  </p>
+					            </div>
+					        </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_3">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/ex.jpg">
+					            <div class="mui-media-body">
+					Express/zepto
+					                <p class='mui-ellipsis'><span class="pros" style="width:60%;"></span>  </p>
+					            </div>
+					        </a>
+					</li>
+					</ul>
+					
+				</div>
+					<!--4开发-->
+				<div class="title text-left padding-left-10 padding-col-10" style="color:#04AE0F;margin-left: 5px;">开发</div>
+				<div class="mui-card">
+				<ul class="mui-table-view">
+    				<li class="mui-table-view-cell mui-media" id="skill_1">
+			            <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left border-radius-20" src="images/page.png">
+			            <div class="mui-media-body">
+			        页面布局
+					 		<p class='mui-ellipsis'><span class="pros" style="width:75%;"></span></p>
+					    </div>
+					 </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_2">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/js.jpg">
+					            <div class="mui-media-body">
+					原生JS
+					                <p class='mui-ellipsis'><span class="pros" style="width:75%;"></span>  </p>
+					            </div>
+					        </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_3">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/wechat1.jpg">
+					            <div class="mui-media-body">
+					微信APP
+					                <p class='mui-ellipsis'><span class="pros" style="width:65%;"></span>  </p>
+					            </div>
+					        </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_3">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/hybrid.jpg">
+					            <div class="mui-media-body">
+					HybridApp
+					                <p class='mui-ellipsis'><span class="pros" style="width:60%;"></span>  </p>
+					            </div>
+					        </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_3">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/sql.jpg">
+					            <div class="mui-media-body">
+					后台数据库SQL
+					                <p class='mui-ellipsis'><span class="pros" style="width:70%;"></span></p>
+					            </div>
+					        </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_3">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/node.jpg">
+					            <div class="mui-media-body">
+					后台语言PHP/NodeJs
+					                <p class='mui-ellipsis'><span class="pros" style="width:55%;"></span></p>
+					            </div>
+					        </a>
+					</li>
+					</ul>
+				
+				</div>
+				<!--5工具-->
+				<div class="title text-left padding-left-10 padding-col-10" style="color:#5E5E5E;margin-left: 5px;">工具</div>
+				<div class="mui-card">
+				<ul class="mui-table-view">
+    				<li class="mui-table-view-cell mui-media" id="skill_1">
+			            <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left border-radius-20" src="images/hh.jpg">
+			            <div class="mui-media-body">
+			        Hbuider
+					 		<p class='mui-ellipsis'><span class="pros" style="width:80%;"></span></p>
+					    </div>
+					 </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_2">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/sublime.png">
+					            <div class="mui-media-body">
+					Sublime
+					                <p class='mui-ellipsis'><span class="pros" style="width:80%;"></span></p>
+					            </div>
+					        </a>
+					</li>
+					<li class="mui-table-view-cell mui-media" id="skill_3">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left border-radius-20" src="images/ps.jpg">
+					            <div class="mui-media-body">
+					PS
+					                <p class='mui-ellipsis'><span class="pros" style="width:70%;"></span></p>
+					            </div>
+					        </a>
+					</li>
+					</ul>
+				</div>
+			</div>
+			<!--第二个主页面-教育经历-->
+			<div id="tabbar-with-chat" class="mui-control-content">
+				<!--我的高中-->
+			<div class="title text-center padding-col-10">我的高中</div>
+			<div class="mui-card">
+				<div class="mui-card-header mui-card-media" style="height:40vw;background-image:url(./images/dayi.jpg);background-size: 100% 100%;"></div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p>Posted on June 18, 2013</p>
+						<p style="color: #333;padding-left: 10px;">2013年，这个夏天除了炎热，还有着我们期待的大学生活...</p>
+					</div>
+				</div>
+				<!--<div class="mui-card-footer">
+					<a class="mui-card-link">Like</a>
+					<a class="mui-card-link">Read more</a>
+				</div>-->
+			</div>
+			<!--我的大学-->
+			<div class="title text-center padding-col-10">我的大学</div>
+			<div class="mui-card">
+				<div class="mui-card-header mui-card-media" style="height:40vw;background-image:url(./images/college.jpg);background-size: 100% 100%;"></div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p>Posted on June 18, 2017</p>
+						<p style="color: #333;padding-left: 10px;">生活从未结束，仍需加倍努力、拼搏，精彩由自我创造...</p>
+					</div>
+				</div>
+				<!--<div class="mui-card-footer">
+					<a class="mui-card-link">Like</a>
+					<a class="mui-card-link">Read more</a>
+				</div>-->
+			</div>
+				
+			</div>
+			<!--第三个主页面-项目-->
+			<div id="tabbar-with-contact" class="mui-control-content">
+				<div class="mui-content" style="background-color:#fff">
+				    <h5 style="background-color:#efeff4" class="padding-col-10 text-center">我的项目</h5>
+				    <ul class="mui-table-view mui-grid-view">
+				        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+				            <a href="http://www.hao669.online/www.index.html">
+				                <img class="mui-media-object" src="./images/bg.png">
+				                <div class="mui-media-body">Eujipin集品网</div></a></li>
+				        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+				            <a href="#">
+				                <img class="mui-media-object" src="./images/bg.png">
+				                <div class="mui-media-body">Web</div></a></li>
+				        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+				            <a href="#"><img class="mui-media-object" src="./images/bg.png">
+				                <div class="mui-media-body">WebApp</div></a></li>
+				        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+				            <a href="#">
+				                <img class="mui-media-object" src="./images/bg.png">
+				                <div class="mui-media-body">WechatApp</div></a></li>
+				    </ul>    
+				</div>
+			</div>
+			<!--第四个主页面-->
+			<div id="tabbar-with-map" class="mui-control-content">
+				<div class="title text-center padding-col-10">Contact Me!</div>
+				<div>
+					<div style="width: 80px;height:80px;margin:10px auto;"><img style="width:100%;height: 100%;border-radius: 50%;"  src="images/person.png"/></div>
+				</div>
+			<div class="mui-card" style="margin-bottom: 35px;">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">Name：郝展(MarkTo)</li>
+					<li class="mui-table-view-cell">Sex：Male</li>
+					<li class="mui-table-view-cell">Age：22</li>
+					<li class="mui-table-view-cell">Hobbs：Badminton、Pingpong、Surf the Internet and so on...</li>
+					<li class="mui-table-view-cell">Mobile：<button id='alertBtn1' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">Click Me!</button></li>
+					<li class="mui-table-view-cell">Email：<button id='alertBtn2' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">Click Me!</button></li>
+				</ul>
+			</div>
+			</div>
+		</div>
+</body>
+</html>
